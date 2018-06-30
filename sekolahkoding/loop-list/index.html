@@ -1,0 +1,24 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title> For Loops </title>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    </head>
+    <body>
+       <h2> For Loops </h2>
+       <hr> 
+       <div id="app1">
+            <h3> Many Data </h3>
+            <ul>
+                <li v-for="row in members">{{ row.name }} - {{ row.age }} - {{ row.skill }}</li>
+            </ul>
+
+            <h3> One Data </h3>
+            <ul>
+                <li v-for="(val,key) in member">{{key}} : {{val}}</li>
+            </ul>
+       </div>
+      
+       <script src="app.js"></script>
+    </body>
+</html>

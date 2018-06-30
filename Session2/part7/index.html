@@ -18,17 +18,17 @@
             
             <h2> {{ message }} </h2>
             <input type="text" v-model="message">
-            <ul v-for="reminder in personalMessages">
+            <ul v-for="(reminder,index) in personalMessages">
                 <li v-show="!reminder.secret">
-                    {{ reminder.title}} - {{ reminder.text }}
+                    {{ reminder.title}} - {{ reminder.text }} <button v-on:click="toggleSecret(reminder,index)"> toggleSecret </button>
                 </li>
                 <li v-show="reminder.secret">
-                    ******
+                    ****** <button v-on:click="toggleSecret(reminder,index)"> toggleSecret </button>
                 </li>
              
             </ul>
             <div>
-                <a v-bind:title="" v-bind:href="scrimbaURL"> {{scrimbaTitle}} </a>
+                <a v-bind:href="scrimbaURL"> {{scrimbaTitle}} </a>
             </div>
             
         </div>

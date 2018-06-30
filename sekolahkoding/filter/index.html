@@ -1,0 +1,25 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title> List Method</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    </head>
+    <body>
+        <div id="app1" >
+            <p> All Data </p>
+            <ul>
+                <li v-for="row in members">
+                     {{ row.name }} - {{  row.age}}
+                </li>
+            </ul>
+
+            <p> Filter </p>
+            <ul>
+                <li v-for="row in members | filterBy 'Fadil' in 'name' ">
+                     {{ row.name }} - {{ row.age }}
+                </li>
+            </ul>
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html>
