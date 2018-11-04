@@ -21,12 +21,12 @@ var app = new Vue({
         
     },
     methods:{
-        add_product:function(){
-            alert()
+        add_product:function(title,price,description){
+            alert("hello")
             this.products.push({
-                title:this.title,
-                price:this.price,
-                description:this.description
+                title,
+                price,
+                description
             })
         }
     }

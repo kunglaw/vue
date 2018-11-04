@@ -27,7 +27,7 @@
         <div class="container">
             <div class="spacer"></div>
             <div class="row">
-                <form-component v-bind="{title,price,description,add_product}"></form-component>
+                <form-component v-bind="{title,price,description}"></form-component>
                 <div class="col-md-6">
                     <h1> Product </h1>
                     <product-card v-for="product in products" v-bind:product="product"></product-card>
@@ -67,7 +67,7 @@
     <script id="form-component">
         Vue.component("form-component",{
             template:"#form-product",
-            props:["title","price","description","add_product"],
+            props:["title","price","description"],
             data:function() {
                 return {
                     title:this.title,
@@ -76,7 +76,9 @@
                 }
             },
             methods:{
-               
+               add_product:function(){
+                   app.add_product(this.title,this.price,this.description)
+               }
             }
         })
     </script>
