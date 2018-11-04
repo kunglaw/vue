@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Product CRUD</title>
+    <link rel="stylesheet" href="/assets/dist/bootstrap/dist/css/bootstrap.css">
+    <script src="assets/dist/vue.js"></script>
+    <script src="assets/dist/jquery.js"></script>
+    <script src="assets/dist/bootstrap/dist/js/bootstrap.js"></script>
+    <style>
+        .spacer{
+            margin-top:30px
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+
+        <nav class='navbar bg-primary'>
+            <a class='navbar text-white'> XProduct </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+        <div class="container">
+            <div class="spacer"></div>
+            <div class="row">
+                <form-component v-bind="{title,price,description,add_product}"></form-component>
+                <div class="col-md-6">
+                    <h1> Product </h1>
+                    <product-card v-for="product in products" v-bind:product="product"></product-card>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <template id='form-product'>
+        <div class="card col-md-5">
+            <div class="card-header">
+                <h3 class="card-title">Product Form</h3>
+            </div>
+            <div class="card-body">
+                <form class="form">
+                    <div class="form-group">
+                        <label>Product Title</label>
+                        <input v-model="title" type="text" id="product_title" class="form-control">
+                        masa gak ada ? {{ title }}
+                    </div>
+                    <div class="form-group">
+                        <label>Price</label>
+                        <input v-model="price" type="text" max="1000000000" min="1000" id="price" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea class="form-control" v-model="description"></textarea>
+                    </div>
+                    <button v-on:click="add_product" type="button" class="btn btn-primary"> Add Product </button>
+                </form>
+            </div>
+        </div>
+    </template>
+
+    <script id="form-component">
+        Vue.component("form-component",{
+            template:"#form-product",
+            props:["title","price","description","add_product"],
+            data:function() {
+                return {
+                    title:this.title,
+                    price:this.price,
+                    description:this.description
+                }
+            },
+            methods:{
+               
+            }
+        })
+    </script>
+
+    <template id="product-card">
+        <div class="card" style='margin-bottom:10px'>
+            <div class="card-header">{{ product.title }}</div>
+            <div class="card-body">
+                <div><b>{{ product.price }}</b></div>
+                <div>{{ product.description }}</div>
+            </div>
+        </div>
+    </template>
+
+    <script>
+        Vue.component("product-card",{
+            template:"#product-card",
+            props:["product"]
+        })
+
+    </script>
+
+    <script src="/assets/js/app.js"></script>
+</body>
+</html>
