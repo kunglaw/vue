@@ -11,6 +11,8 @@ var app = new Vue({
         height:17,
         width:10,
         wide:0,
+        kilometers:0,
+        meters:0,
         products:[
             {title:"Asus ROG RAM 16GB",
             price:15000000,
@@ -34,13 +36,25 @@ var app = new Vue({
             return 
         },
         box_wide:function() {
+            alert(" done ...")
             return this.wide = this.height * this.width 
+          
        
         }
     },
     methods:{
-        test_methods(){
+        test_method(){
             alert("bisa gak ? ")
+        }
+    },
+    watch:{
+        kilometers:function(val){
+            this.kilometers = val
+            this.meters = val * 1000
+        },
+        meters:function(val){
+            this.meters = val
+            this.kilometers = val / 1000
         }
     }
 })

@@ -42,9 +42,20 @@
         <h3>Wide : {{ wide }}</h3>
         <button v-on:click="box_wide()"> Compute Wide </button>
 
-        <button v-on:click="">
+        <button v-on:click="test_method">
             click to test
         </button>
+
+        <hr>
+        <h1> Belajar Watch Properties </h1>
+            
+            <label>Kilometers</label><br>
+            <input v-model="kilometers"><br>
+
+            <label>Meters</label><br>
+            <input v-model="meters"><br>
+
+            <button> Calculate !</button>
 
         <hr>
 

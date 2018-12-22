@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VueJS Dynamic Attributes - IdStack</title>
+    <script src="assets/vendor/vue.js"></script>
+    <style>
+     
+        nav ul li{
+            margin-right:10px;
+            float: left;
+            list-style-type: none
+        }
+        .clear {
+            clear: both;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1> Belajar Dynamic Attributes </h1>
+        <hr>
+            <mymenu v-bind:menus="menu"></mymenu>
+            <div class='clear'></div>
+        <hr>
+       <img v-bind:src="img.src" v-on:click="changeImage" width="200">
+
+        <h1 v-bind:style="niggalation"> Niggalation </h1>
+
+       <br>
+       <hr>
+            
+            <myfooter v-bind:ft="footerText"></myfooter>
+    </div>
+    <!-- ini harus dibawah cuk -->
+    <script src="components/menu.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="assets/js/dynamic_attributes.js"></script> 
+    
+</body>
+</html>

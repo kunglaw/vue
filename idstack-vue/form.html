@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VueJS Form Data Binding - IdStack</title>
+    <script src="assets/vendor/vue.js"></script>
+    <style>
+     
+
+
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1> Belajar Form </h1>
+        <hr>
+
+       <label>Name</label><br>
+       <input type="text" v-model="name" >
+       <div>my name is {{ name }}</div> <br>
+
+        <label> Gender </label><br>
+        <input type="radio" name="gender" value="male" v-model="gender" > Male
+        <input type="radio" name="gender" value="female" v-model="gender" > FeMale
+      
+        <div> Your choice is a {{ gender }}</div>
+        <br>
+
+        <label> Hobbies </label> <br>
+        <input type="checkbox" value="anime" v-model="hobbies"> Anime <br>
+        <input type="checkbox" value="9GAG" v-model="hobbies"> 9GAG </br>
+        <input type="checkbox" value="coding" v-model="hobbies"> coding </br>
+        <div> Your choice is a {{ hobbies }}</div>
+        <ul>
+            <li v-for="(hobby,index) in hobbies" >{{ index }}. {{ hobby }}</li>
+        </ul>
+        <br>
+
+        <label> Province </label><br>
+        <select  v-model="province">
+            <option v-for="province in provinces" v-bind:value="province.id"> {{ province.name }}</option>
+        </select>
+        <div>your province is : {{ province }}</div>
+        <br>
+
+       <label>Address </label><br>
+       <textarea v-model="address"></textarea>
+       <div style="white-space: pre-line;">I lived at {{ address }}</div>
+    </div>
+    <!-- ini harus dibawah cuk -->
+   
+    <script src="assets/js/form.js"></script> 
+    
+</body>
+</html>
