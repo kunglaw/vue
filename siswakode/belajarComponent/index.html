@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Belajar Component</title>
+    <link href="./../assets/vendor/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="./mystyle.css" rel="stylesheet" type="text/css">
+    <script src="./../assets/vendor/vue.js"></script>
+    <script src="./../assets/vendor/vue-router.js"></script>
+</head>
+<body>
+    <div id="app">
+        <navbar v-bind:brand="brand"></navbar>
+        <router-view></router-view>
+        <myfooter></myfooter>
+    </div>
+
+   
+
+    <script src="./components/navbarComponent.js"></script>
+    <script src='./components/footerComponent.js'></script>
+    <script src="./components/cardComponent.js"></script>
+    <script src="./homePage.js"></script>
+    <script src="./aboutPage.js"></script>
+    <script src="./postPage.js"></script>
+    <script src="./app.js"></script>
+</body>
+</html>
